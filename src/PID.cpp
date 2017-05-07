@@ -1,4 +1,5 @@
 #include "PID.h"
+#include <iostream>
 
 using namespace std;
 
@@ -17,5 +18,5 @@ void PID::UpdateError(double cte) {
 }
 
 double PID::TotalError() {
+    return 0.0;
 }
-

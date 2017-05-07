@@ -59,6 +59,7 @@ int main()
           */
           
           // DEBUG
+          steer_value = 0.0;
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
 
           json msgJson;
