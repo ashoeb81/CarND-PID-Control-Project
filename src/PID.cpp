@@ -20,19 +20,15 @@ void PID::Init(double Kp, double Ki, double Kd) {
 }
 
 void PID::UpdateError(double cte) {
+    // Proportional error.
     p_error = cte;
+    // Integral error
     i_error += cte;
+    // Derivative error
     d_error = cte - prev_error;
     prev_error = cte;
 }
 
 double PID::TotalError() {
-    double command = -Kp*p_error - Kd*d_error - Ki*i_error;
-    if (command >= 1) {
-        return 1;
-    } else if (command <= -1) {
-        return -1;
-    } else {
-        return command;
-    }
+    return -Kp * p_error - Kd * d_error - Ki * i_error;
 }
